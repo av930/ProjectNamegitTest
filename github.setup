@@ -1,0 +1,48 @@
+;from http://help.github.com/win-set-up-git/
+
+;for key gen and register
+cd ~/.ssh 
+ssh-keygen -t rsa -c "av9300@gmail.com"
+and then on the gitHub site Click and paste it
+Account Settings> Click SSH Public Keys > Click Add another public key
+
+;for test and RSA key registration
+ssh -T git@github.com 
+
+;setup git config
+git config --global user.name "joongkeun.kim"
+git config --global user.email "joongkeun.kim@lge.com"
+
+;set your gitHub token to assure the connection for some tool without ssh
+and then on the gitHub site Click and Copy from it
+Account Settings> Click Account Admin
+
+git config --global github.user "joongkeun.kim"
+;paste it
+git config --global github.token "paste it here"
+
+
+
+;create repo gitHub.com
+Create New Repository
+
+;git repo init
+mkdir your_project
+cd your_project
+git init
+touch readme
+
+;register first commit to default branch
+git add readme
+git commit -m 'first commit'
+git remote add origin git@github.com;av930/your_project.git
+git push origin master
+
+
+;join the legacy repo
+git clone git@github.com:av930/ProjectNamegitTest.git
+
+cd Another.git
+git remote add upstream git://github.com/example/Another.git
+git fetch upstream
+
